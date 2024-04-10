@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylem.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
+
+    <title>Tranquil Travels</title>
+
+</head>
+<body>
+    <nav class="fixed-navigation">
+        <img class="logo" src="./Assets/logo.svg"/>
+        <ul class="nav-links">
+            <li><a class="nav-link" href="#">Home</a></li>
+            <li><a class="nav-link" href="#find">Find offers</a></li>
+            <li><a class="nav-link" href="#add">Add new offers</a></li>
+            <li><a class="nav-link" href="#my">My offers</a></li>
+            <li><a class="nav-link" href="#favorites">Favorites</a></li>
+            <button class="button primary">Log out</button>
+        </ul>
+        <button class="button primary hidden">Menu</button>
+    </nav>
+    <section id="hero" class="grid hero-section">
+        <div class="title-grid">
+        <p class="title-large">Serene Retreat</p>
+    </div>
+        <div class="hero-image-container2">
+            <p class="chip-widok">Add to favorites<img src="./Assets/heart.png"></p>
+        </div>
+        <article class="hero-details-widok">
+            <div class="dane">
+            <b>Location:</b> Madrid<br>
+            <b>Local category:</b>★★★★☆<br>
+            <b>Price:</b> 70€/room/night<br>
+            <b>Description</b>
+        </div>
+            <p class="text-middle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec leo ligula. Etiam fermentum est in euismod egestas. Curabitur at condimentum ligula. Phasellus nunc velit, facilisis fermentum congue ac, cursus at leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam nec sapien vitae neque scelerisque tempus. Vestibulum hendrerit tellus ut pulvinar feugiat. Nullam iaculis vitae justo sit amet tempus. Nam nunc nunc, porttitor sed turpis quis, feugiat egestas leo. Phasellus consequat magna ante, ac aliquam felis convallis sit amet. Sed massa lorem, iaculis ac vestibulum ac, tempus a tortor. Ut posuere ipsum nec condimentum vehicula. Curabitur orci velit, aliquam vel arcu quis, semper congue ligula.</p>
+            <div>
+            <button class="button primary " id="openModal">Contact<img src="./Assets/mail.png"></button>
+            </div>
+            <div class="hero-cards">
+                <div class="card-image-widok">
+                </div>
+                <div class="card-image-widok">
+                </div>
+            </div>
+        </article>
+    </section>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p class="title-large">Contact</p>
+          You're contacting the [hotel name] hotel
+          <form>
+            <textarea class="textarea-modal"></textarea>
+            <div class="modal-button">
+            Cancel&nbsp&nbsp&nbsp<button class="button primary " id="openModal">Send <img src="./Assets/mail.png"></button>
+        </div>
+          </form>
+        </div>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>
