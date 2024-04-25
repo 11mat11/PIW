@@ -21,7 +21,7 @@ const add = () => {
         console.log("Pole jest puste");
 
         const modal = document.getElementById("my-modal");
-        modal.setAttribute("open", "true"); // Wyświetl modal
+        modal.setAttribute("open", "true"); 
 
         return;
     }
@@ -31,7 +31,7 @@ const add = () => {
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "x";
-    listItem.appendChild(deleteButton); // Dodaj przycisk usuwania od razu
+    listItem.appendChild(deleteButton); 
 
     listItem.addEventListener("click", () => {
         listItem.classList.toggle("zrobione");
@@ -44,17 +44,17 @@ const add = () => {
         } else {
             const dateSpan = listItem.querySelector("span");
             if (dateSpan) {
-                dateSpan.remove(); // Usuń datę
+                dateSpan.remove(); 
             }
         }
     });
 
-    // Usuń element z listy i dodaj go do stosu po kliknięciu "x"
+    
     deleteButton.addEventListener("click", () => {
         const taskText = listItem.innerText.trim();
         document.getElementById("deleteTaskText").innerText = taskText;
         const deleteModal = document.getElementById('modal_usun');
-        deleteModal.setAttribute("open", "true"); // Wyświetl modal
+        deleteModal.setAttribute("open", "true"); 
     });
 
     selectedList.append(listItem);
@@ -65,7 +65,7 @@ const deleteItem = () => {
   const listItem = document.querySelector("li.zrobione");
   if (listItem && listItem.parentNode) {
       const parent = listItem.parentNode;
-      deletedItemsStack.push({ item: listItem, parent: parent }); // Dodaj parę element-rodzic do stosu
+      deletedItemsStack.push({ item: listItem, parent: parent }); 
       listItem.remove();
   }
 }
@@ -73,8 +73,8 @@ const deleteItem = () => {
 // Funkcja cofania ostatniego usunięcia
 const undoDelete = () => {
   if (deletedItemsStack.length > 0) {
-      const { item, parent } = deletedItemsStack.pop(); // Pobierz ostatnią parę element-rodzic ze stosu
-      parent.appendChild(item); // Przywróć element do jego rodzica
+      const { item, parent } = deletedItemsStack.pop(); 
+      parent.appendChild(item); 
   }
 }
 const updateList = () => {
@@ -113,24 +113,24 @@ window.onload = () => {
     const closingButton = document.getElementById("closing");
     closingButton.addEventListener("click", () => {
         const modal = document.getElementById("my-modal");
-        modal.removeAttribute("open"); // Ukryj modal
+        modal.removeAttribute("open"); 
     });
 
     const modalUsunTakButton = document.getElementById("tak");
     modalUsunTakButton.addEventListener("click", () => {
-        deleteItem(); // Usuń element
+        deleteItem(); 
         const deleteModal = document.getElementById('modal_usun');
-        deleteModal.removeAttribute("open"); // Ukryj modal
+        deleteModal.removeAttribute("open"); 
     });
 
     const modalUsunNieButton = document.getElementById("nie");
     modalUsunNieButton.addEventListener("click", () => {
         const deleteModal = document.getElementById('modal_usun');
-        deleteModal.removeAttribute("open"); // Ukryj modal
+        deleteModal.removeAttribute("open"); 
     });
 
     const undoButton = document.getElementById("undo-button");
     undoButton.addEventListener("click", () => {
-        undoDelete(); // Cofnij ostatnie usunięcie
+        undoDelete();
     });
 }
