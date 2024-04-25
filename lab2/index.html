@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abacus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <label for="text">Wpisz treść:</label>
+    <input placeholder="Treść" id="text" class="form-control"/>
+    <br>
+    <label for="list-select">Wybierz listę:</label>
+    <select id="list-select" class="form-select">
+        <option value="mało-pilne">Mało pilne</option>
+        <option value="pilne">Pilne</option>
+        <option value="na-wczoraj">Na wczoraj</option>
+    </select>
+    <button onclick="add()" class="btn btn-primary">Dodaj</button><br>
+    <input type="text" id="search-input" placeholder="Wyszukaj..." class="form-control">
+    <input type="checkbox" id="case-insensitive-checkbox"> Case-insensitive<br>
+    <h2>Listy:</h2>
+
+    <!-- Lista mało pilnych -->
+    <details>
+        <summary class="fs-5">Mało pilne</summary>
+        <ol id="list-malo-pilne" class="list-group">
+
+        </ol>
+    </details>
+
+    <!-- Lista pilnych -->
+    <details>
+        <summary class="fs-5">Pilne</summary>
+        <ol id="list-pilne" class="list-group">
+
+        </ol>
+    </details>
+
+    <!-- Lista na wczoraj -->
+    <details>
+        <summary class="fs-5">Na wczoraj</summary>
+        <ol id="list-na-wczoraj" class="list-group">
+
+        </ol>
+    </details>
+    <button id="undo-button" class="btn btn-warning">Cofnij usunięcie</button>
+
+    <dialog id="my-modal">
+        <h3>Pole jest puste</h3>
+        <button id="closing">OK</button>
+    </dialog>
+
+    <dialog id="modal_usun">
+        <h3>Czy na pewno chcesz usunąć zadanie o treści:<p id="deleteTaskText"></p></h3>
+        <button id="tak" class="btn btn-danger">Tak</button><button id="nie" class="btn btn-secondary">Nie</button>
+    </dialog>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
