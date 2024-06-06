@@ -129,7 +129,7 @@ const Hotel_page = () => {
                     <p className="title-large">{hotel.textmiddle}</p>
                 </div>
                 <div className="hero-image-container2" style={backgroundStyle}>
-                    <p className="chip-widok">Add to favorites<img src={favorites.some(favorite => favorite.id === hotel.id) ? heart1 : heart2} alt="Heart" onClick={handleFavoriteToggle} /></p>
+                    <p className="chip-widok">Add to favorites<img src={favorites.some(favorite => favorite.id === hotel.id) ? heart2 : heart1} alt="Heart" onClick={handleFavoriteToggle} /></p>
                     {isOwner && !editable && <button className="button primary" onClick={handleEdit}>Edit</button>} {/* Przycisk edycji dla właściciela */}
                 </div>
                 <article className="hero-details-widok">
